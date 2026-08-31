@@ -1,0 +1,36 @@
+# Gulu University Website — web-root access control (CLAUDE.md Rule 5).
+# Deny direct access to anything that is not meant to be served as a page:
+# .env (DB credentials!), raw SQL schema, PHP includes/config, git metadata.
+
+<FilesMatch "^\.env">
+    Require all denied
+</FilesMatch>
+
+<FilesMatch "\.(sql|md|log)$">
+    Require all denied
+</FilesMatch>
+
+RewriteEngine On
+RewriteRule ^(config|includes|database|storage)/ - [F,L]
+RewriteRule ^\.git/ - [F,L]
+RewriteRule ^sitemap\.xml$ sitemap.php [L]
+
+# Hide .php extensions: /about -> about.php, transparently, if that file
+# really exists. Every internal href/action/nav URL in this project is
+# already written without the .php extension to match (see CLAUDE.md).
+# Query strings (?slug=x) pass through automatically — mod_rewrite only
+# matches the path portion. Guarded with -f (real file) and !-d (not a
+# directory) so this never shadows a real subdirectory request.
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.*)$ $1.php [L]
+
+# NOTE: this path is resolved from the server's DocumentRoot, which in this
+# local XAMPP dev setup is htdocs/ (one level above this project), not this
+# project's own root — hence the /gu-website/ prefix. When this project is
+# deployed as its own site root in production, change this back to plain
+# /404.php (see progress.md).
+ErrorDocument 404 /gu-website/404.php
+ErrorDocument 403 /gu-website/404.php
+
+Options -Indexes

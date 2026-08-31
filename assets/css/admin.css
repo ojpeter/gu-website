@@ -1,0 +1,131 @@
+/* Admin CMS — minimal layout built on the same design tokens as the public
+   site (assets/css/style.css), not a separate framework (CLAUDE.md Rule 8). */
+
+.admin-body {
+    background: var(--gu-surface-alt);
+    min-height: 100vh;
+}
+
+.admin-topbar {
+    background: var(--gu-ink);
+    color: #fff;
+    padding: var(--gu-space-2) 0;
+}
+
+.admin-topbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--gu-space-2);
+}
+
+.admin-topbar a {
+    color: #dce7e0;
+}
+
+.admin-topbar .admin-brand {
+    font-weight: 800;
+    color: #fff;
+    text-decoration: none;
+}
+
+.admin-nav {
+    display: flex;
+    gap: var(--gu-space-3);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+.admin-nav a {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: var(--gu-fs-sm);
+}
+
+.admin-nav a:hover, .admin-nav a[aria-current="page"] { color: #fff; }
+
+.admin-main { padding: var(--gu-space-5) 0; }
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--gu-surface);
+    border-radius: var(--gu-radius);
+    overflow: hidden;
+    box-shadow: var(--gu-shadow);
+}
+
+.admin-table th, .admin-table td {
+    text-align: left;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--gu-border);
+    font-size: var(--gu-fs-sm);
+}
+
+.admin-table th {
+    background: var(--gu-surface-alt);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-size: 0.7rem;
+    color: var(--gu-muted);
+}
+
+.admin-form label {
+    display: block;
+    font-weight: 700;
+    font-size: var(--gu-fs-sm);
+    margin-bottom: 0.3rem;
+}
+
+.admin-form .field { margin-bottom: var(--gu-space-3); }
+
+.admin-form input[type="text"],
+.admin-form input[type="email"],
+.admin-form input[type="password"],
+.admin-form input[type="datetime-local"],
+.admin-form input[type="file"],
+.admin-form select,
+.admin-form textarea {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    border: 1px solid var(--gu-border);
+    border-radius: var(--gu-radius-sm);
+    font: inherit;
+}
+
+.admin-form .field-error { color: var(--gu-red-deep); font-size: 0.8rem; display: block; margin-top: 0.25rem; }
+
+.admin-auth-wrap {
+    max-width: 26rem;
+    margin: var(--gu-space-6) auto;
+    background: var(--gu-surface);
+    border-radius: var(--gu-radius);
+    box-shadow: var(--gu-shadow-lg);
+    padding: var(--gu-space-5);
+}
+
+.totp-secret {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 1.1rem;
+    letter-spacing: 0.15em;
+    background: var(--gu-surface-alt);
+    padding: 0.75rem 1rem;
+    border-radius: var(--gu-radius-sm);
+    word-break: break-all;
+    text-align: center;
+}
+
+.pill-status {
+    display: inline-block;
+    padding: 0.15em 0.7em;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.pill-published { background: var(--gu-surface-tint); color: var(--gu-green-deep); }
+.pill-draft { background: #fffbe0; color: #6b5e00; }

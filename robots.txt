@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /config/
+Disallow: /includes/
+Disallow: /database/
+Disallow: /storage/
+Allow: /
+
+Sitemap: http://localhost/gu-website/sitemap.xml
