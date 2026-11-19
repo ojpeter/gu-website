@@ -2,7 +2,7 @@
 require_once __DIR__ . '/includes/security.php';
 
 $pageTitle = 'About';
-$pageDescription = 'About Gulu University — mission, governance, campuses, and facts.';
+$pageDescription = 'About Gulu University - mission, governance, campuses, and facts.';
 
 require __DIR__ . '/includes/layout_header.php';
 ?>
@@ -11,7 +11,7 @@ require __DIR__ . '/includes/layout_header.php';
     <div class="container">
         <span class="eyebrow">About Us</span>
         <h1>About Gulu University</h1>
-        <p class="lede">Gulu University is a public university in Northern Uganda — <strong>"For Community Transformation."</strong> The university advances rural development, agriculture, health, education, business, law, and peace-building through teaching, research, and community engagement.</p>
+        <p class="lede">Gulu University is a public university in Northern Uganda - <strong>"For Community Transformation."</strong> The university advances rural development, agriculture, health, education, business, law, and peace-building through teaching, research, and community engagement.</p>
     </div>
 </section>
 
@@ -21,7 +21,7 @@ require __DIR__ . '/includes/layout_header.php';
         <div class="card-grid">
             <div class="card">
                 <h3>Mission</h3>
-                <p>"For Community Transformation" — advancing rural development, agriculture, health, education, business, law, and peace-building through teaching, research, and community engagement.</p>
+                <p>"For Community Transformation" - advancing rural development, agriculture, health, education, business, law, and peace-building through teaching, research, and community engagement.</p>
             </div>
             <div class="card">
                 <h3>Vision</h3>
